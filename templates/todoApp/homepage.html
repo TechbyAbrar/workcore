@@ -1,0 +1,32 @@
+{% extends "todoApp/base.html" %}
+{% load static %}
+
+{% block title %}Homepage{% endblock title %}
+
+{% block style %}
+ <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+ <!-- Background with Animated Neon Glow, Moon, Stars, Rocket, and Tree -->
+ <div class="background"></div>
+ <div class="moon"></div>
+ <div class="star" style="top: 10%; left: 15%; animation-duration: 2s;"></div>
+ <div class="big-star" style="top: 25%; left: 30%; animation-duration: 4s;"></div>
+ <div class="star" style="top: 50%; left: 55%; animation-duration: 2.5s;"></div>
+ <div class="big-star" style="top: 70%; left: 80%; animation-duration: 3s;"></div>
+ <div class="star" style="top: 90%; left: 85%; animation-duration: 2.2s;"></div>
+ <div class="tree"></div>
+
+ <!-- Rocket Animation -->
+ <div class="rocket"></div>
+
+<div class="hero">
+    <div>
+      <h1>Welcome to WorkCore</h1>
+      <p>Your innovative work solution platform</p>
+      <a class="btn btn-login btn-outline-warning" href="{% url 'login' %}">Get Started</a>
+    </div>
+  </div>
+{% endblock content %}

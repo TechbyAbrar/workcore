@@ -1,0 +1,69 @@
+{% extends "todoApp/base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card p-4 shadow-lg neon-card">
+        <h2 class="text-center mb-4 text-glow">Update Task</h2>
+        
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="task_title" class="text-glow">Task Title:</label>
+                <input type="text" id="task_title" name="task_title" class="form-control neon-input" value="{{ task.title }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="task_description" class="text-glow">Task Description:</label>
+                <textarea id="task_description" name="task_description" class="form-control neon-input" rows="4">{{ task.description }}</textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-glow w-100">Update Task</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #1a1a2e;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .neon-card {
+        background: #0f3460;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+
+    .text-glow {
+        color: #00ffff;
+        text-shadow: 0px 0px 10px #00ffff;
+    }
+
+    .neon-input {
+        background-color: #16213e;
+        color: white;
+        border: 2px solid #00ffff;
+        border-radius: 10px;
+        padding: 10px;
+        outline: none;
+        box-shadow: 0 0 10px #00ffff;
+    }
+
+    .btn-glow {
+        background-color: #00ffff;
+        color: black;
+        font-weight: bold;
+        text-shadow: 0px 0px 10px #ffffff;
+        transition: 0.3s;
+    }
+
+    .btn-glow:hover {
+        background-color: #00bcd4;
+        box-shadow: 0 0 20px #00ffff;
+    }
+</style>
+{% endblock %}
+
+
+{% block footer %}{% endblock footer %}
